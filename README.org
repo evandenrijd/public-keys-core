@@ -1,0 +1,51 @@
+#+TITLE: Public Keys and Verification Instructions
+
+* Public Keys
+
+This repository contains the public keys necessary for verifying the authenticity of signed documents.
+
+| Name              | Key ID           | Public Key | Comment     |
+|-------------------+------------------+------------+-------------|
+| Eduard Vandenrijd | 90149B1A71DC95FE | [[file:data/signing-keyid-90149B1A71DC95FE.asc][Download]]   | Signing key |
+
+* Verification Instructions
+   To verify a signed document, follow these steps:
+   1. Download Public Key:
+      - Click on the "Download" link next to the person's name above to obtain their public key file (`.asc`).
+
+   2. Import Public Key:
+      - Use the GPG (GnuPG) tool to import the downloaded public key:
+        #+begin_src shell
+          gpg --import path/to/downloaded-public-key.asc
+        #+end_src
+
+   3. Verify a Document:
+      - When you receive a signed document, obtain the accompanying detached signature file (`.sig`).
+
+      - Verify the document using the following command:
+
+        #+begin_src shell
+          gpg --verify path/to/document.sig path/to/document
+        #+end_src
+
+      - GPG will output the verification status.
+
+   4. Validate Key Identity:
+      - Verify that the key ID matches the expected key ID for the person who signed the document.
+
+        #+begin_src shell
+          gpg --list-keys
+        #+end_src
+
+      - Compare the key ID in the output with the expected key ID.
+
+   5. Additional Notes:
+      - Always obtain public keys from trusted sources.
+      - Ensure that the public key corresponds to the person claiming to sign the document.
+      - Regularly check for updated public keys.
+
+* Contact Information
+
+  If you have any questions or concerns, please [[mailto:evandenrijd@gmail.com][contact]].
+
+  *License: GNU General Public Licence v3.0*
