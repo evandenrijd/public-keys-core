@@ -5,10 +5,11 @@
 
 This repository contains the public keys necessary for verifying the authenticity of signed documents.
 
-| Name              | Key ID           | Public Key | Comment                        |
-|-------------------+------------------+------------+--------------------------------|
-| Eduard Vandenrijd | AD8B718F7FB4C89A | [[file:data/signing-keyid-AD8B718F7FB4C89A.asc][Download]]   | Signing key (ed25519, 2026)    |
-| Eduard Vandenrijd | 90149B1A71DC95FE | [[file:data/signing-keyid-90149B1A71DC95FE.asc][Download]]   | Legacy signing key (rsa, 2019) |
+| Name              | Key ID           | Public Key | Comment                               |
+|-------------------+------------------+------------+---------------------------------------|
+| Eduard Vandenrijd | 1A508B0A229DDD36 | [[file:data/signing-keyid-1A508B0A229DDD36.asc][Download]]   | Aubay expense reports (ed25519, 2026) |
+| Eduard Vandenrijd | AD8B718F7FB4C89A | [[file:data/signing-keyid-AD8B718F7FB4C89A.asc][Download]]   | Signing key (ed25519, 2026)           |
+| Eduard Vandenrijd | 90149B1A71DC95FE | [[file:data/signing-keyid-90149B1A71DC95FE.asc][Download]]   | Legacy signing key (rsa, 2019)        |
 
 * Verification Instructions
    To verify a signed document, follow these steps:

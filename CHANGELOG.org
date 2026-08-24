@@ -2,6 +2,10 @@
 #+OPTIONS: toc:nil
 
 * Unreleased
+** 2026/08/24 -- feat: publish aubay signing key 1A508B0A229DDD36
+- =data/signing-keyid-1A508B0A229DDD36.asc=: the work-aubay [S] subkey signing the monthly expense-report PDFs -- every PDF footer's ~site:~ URL points here, and until now the referenced key was not on the page (the expenses portal's vendored copy was the only public export)
+- README.org key table + regenerated index.html: new row "Aubay expense reports (ed25519, 2026)"
+
 ** 2026/06/07 -- feat: publish ed25519 signing key AD8B718F7FB4C89A
 - =data/signing-keyid-AD8B718F7FB4C89A.asc= (new, 1286 bytes) -- ~gpg --armor --export AD8B718F7FB4C89A~ output covering the ed25519 primary ~1605A39F6902DEDAC252AB825F4FBF967C1F9546~ (2026-05-26) and its three subkeys: [S] ~46DADF80CAF5C22CB746C598AD8B718F7FB4C89A~ (signing), [E] ~5D9507FD93A934A052E4A28CED328E57F333CE46~ (encryption), [A] ~096300008278BD8040D0DA34CAC523A4C34F9842~ (authentication).  The [S] subkey is the one ~~/vc/projects/env/expenses-core2/data/signature.pl.conf~ references when ~ec2-build~ signs invoice PDFs; the embedded PDF footer points readers at ~https://evandenrijd.github.io/public-keys-core~ for the .asc, which until now hosted only the legacy 2019 ~90149B1A71DC95FE~ rsa key -- so external verifiers (the employer downloading from the public site) couldn't match the new signatures.
 - =README.org= ~* Public Keys~ table widened from one row to two: perso ed25519 (2026) on top, legacy rsa (2019) underneath.  Comment column rewritten from ~Signing key~ to ~Signing key (ed25519, 2026)~ + ~Legacy signing key (rsa, 2019)~ so the algorithm and vintage are visible at a glance.  Legacy entry retained -- historical PDFs signed pre-2026-05-26 (the ed25519 key's creation date) still require the rsa pubkey for verification, so removing it would break archival verifiability.
